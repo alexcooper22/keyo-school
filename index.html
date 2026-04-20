@@ -165,12 +165,21 @@
             color: var(--accent-color);
             margin-bottom: 24px;
             display: inline-block;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
         }
 
         .hero h1 {
             font-size: clamp(36px, 6vw, 64px);
             line-height: 1.1;
             margin-bottom: 24px;
+        }
+
+        .hero h1 .ai-text {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.85em;
         }
 
         .hero p {
@@ -484,8 +493,8 @@
     <main>
         <section class="hero">
             <span class="tag">ELLEN KEYO SCHOOL</span>
-            <h1>AI-освіта для тих, хто створює майбутнє</h1>
-            <p>Авторські курси від художниці, дизайнерки та AI Creator</p>
+            <h1><span class="ai-text">AI</span>-освіта для тих, хто створює майбутнє</h1>
+            <p>Авторські курси від художниці, дизайнерки та AI-креатора</p>
             <a href="#courses" class="btn btn-primary">Обрати курс &darr;</a>
         </section>
 
