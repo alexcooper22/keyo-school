@@ -301,49 +301,20 @@
         }
 
         .featured-card {
-            grid-column: span 2;
             border-color: var(--accent-color);
-            padding: 0;
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 1fr;
         }
 
-        .featured-card .featured-image {
-            background-color: #2a2a2a; /* Dark background as requested */
+        .featured-image {
+            background-color: #2a2a2a; /* Dark background */
             width: 100%;
             aspect-ratio: 16/9;
             object-fit: cover;
-        }
-        
-        .featured-card .featured-content {
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .badge {
-            background-color: var(--accent-color);
-            color: white;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            padding: 4px 12px;
-            border-radius: 20px;
-            align-self: flex-start;
+            border-radius: 8px;
         }
 
         @media (min-width: 1024px) {
             .courses-grid {
                 grid-template-columns: repeat(4, 1fr);
-            }
-            .featured-card {
-                grid-template-columns: 1fr 1fr;
-            }
-            .featured-card .featured-image {
-                height: 100%;
-                aspect-ratio: auto;
             }
         }
         
@@ -542,13 +513,10 @@
             <!-- Featured Card moved outside of grid to be full width -->
             <div class="featured-wrapper">
                 <div class="course-card featured-card">
+                    <h3>AI Режисер &mdash; повна програма</h3>
                     <img src="featured.jpg" alt="AI Режисер" class="featured-image">
-                    <div class="featured-content">
-                        <span class="badge">Найкраща ціна</span>
-                        <h3>AI Режисер &mdash; повна програма</h3>
-                        <p>Всі три блоки зі знижкою. Повний старт у новій професії</p>
-                        <a href="#" class="btn btn-primary" style="margin-top: auto;">Детальніше &rarr;</a>
-                    </div>
+                    <p>Включає всі 4 блоки зі знижкою 20%. Повний старт у новій професії.</p>
+                    <a href="#" class="btn btn-primary" style="margin-top: auto;">Детальніше &rarr;</a>
                 </div>
             </div>
         </section>
