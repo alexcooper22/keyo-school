@@ -255,6 +255,12 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 14px;
+            padding: 0 24px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .featured-wrapper {
             padding: 0 24px 64px;
             max-width: 1200px;
             margin: 0 auto;
@@ -268,10 +274,14 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
+            height: 100%;
         }
 
-        .course-card .tag {
-            color: #666;
+        .card-image-placeholder {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background-color: var(--placeholder-bg);
+            border-radius: 8px;
         }
 
         .course-card h3 {
@@ -279,16 +289,11 @@
             line-height: 1.2;
         }
 
-        .course-card p {
-            font-size: 14px;
-            color: #555;
-            flex-grow: 1;
-        }
-
         .course-card .btn {
             width: 100%;
             padding: 10px;
             font-size: 14px;
+            margin-top: auto;
         }
 
         .featured-card {
@@ -501,29 +506,35 @@
             <div class="courses-grid">
                 <!-- Card 1 -->
                 <div class="course-card">
-                    <span class="tag">Блок 01</span>
                     <h3>Midjourney: основи та візуальне мислення</h3>
-                    <p>Навчіться мислити образами та створювати результат, за який платять</p>
+                    <div class="card-image-placeholder"></div>
                     <a href="#" class="btn btn-outline">Детальніше &rarr;</a>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="course-card">
-                    <span class="tag">Блок 02</span>
                     <h3>Аватар та комерційні продукти</h3>
-                    <p>Створення AI-аватарів та контенту для брендів і соцмереж</p>
+                    <div class="card-image-placeholder"></div>
                     <a href="#" class="btn btn-secondary">Детальніше &rarr;</a>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="course-card">
-                    <span class="tag">Блок 03</span>
                     <h3>Анімація, відео та монтаж</h3>
-                    <p>Від статичного зображення до живого відео &mdash; повний цикл</p>
+                    <div class="card-image-placeholder"></div>
                     <a href="#" class="btn btn-secondary">Детальніше &rarr;</a>
                 </div>
 
-                <!-- Card 4 / Featured -->
+                <!-- Card 4 / New -->
+                <div class="course-card">
+                    <h3>Розвиток Instagram акаунта для AI-креатора</h3>
+                    <div class="card-image-placeholder"></div>
+                    <a href="#" class="btn btn-secondary">Детальніше &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Featured Card moved outside of grid to be full width -->
+            <div class="featured-wrapper">
                 <div class="course-card featured-card">
                     <div class="featured-image"></div>
                     <div class="featured-content">
