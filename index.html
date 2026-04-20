@@ -283,6 +283,7 @@
             background-color: var(--placeholder-bg);
             border-radius: 8px;
             margin: auto 0;
+            object-fit: cover;
         }
 
         .course-card h3 {
@@ -309,6 +310,7 @@
             background-color: #2a2a2a; /* Dark background as requested */
             width: 100%;
             aspect-ratio: 16/9;
+            object-fit: cover;
         }
         
         .featured-card .featured-content {
@@ -374,10 +376,11 @@
         }
 
         .about-photo {
-            aspect-ratio: 4/3;
+            aspect-ratio: 3/4;
             background-color: var(--placeholder-bg);
             border-radius: 14px;
             width: 100%;
+            object-fit: cover;
         }
 
         .about-content {
@@ -507,28 +510,28 @@
                 <!-- Card 1 -->
                 <div class="course-card">
                     <h3>Художнє мислення та основи Midjourney</h3>
-                    <div class="card-image-placeholder"></div>
+                    <img src="course-1.jpg" alt="Course 1" class="card-image-placeholder">
                     <a href="#" class="btn btn-outline">Детальніше &rarr;</a>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="course-card">
                     <h3>Створюємо Аватар та комерційні продукти</h3>
-                    <div class="card-image-placeholder"></div>
+                    <img src="course-2.jpg" alt="Course 2" class="card-image-placeholder">
                     <a href="#" class="btn btn-outline">Детальніше &rarr;</a>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="course-card">
                     <h3>Анімація, відео та монтаж</h3>
-                    <div class="card-image-placeholder"></div>
+                    <img src="course-3.jpg" alt="Course 3" class="card-image-placeholder">
                     <a href="#" class="btn btn-outline">Детальніше &rarr;</a>
                 </div>
 
                 <!-- Card 4 / New -->
                 <div class="course-card">
                     <h3>Розвиток Instagram для AI-креатора</h3>
-                    <div class="card-image-placeholder"></div>
+                    <img src="course-4.jpg" alt="Course 4" class="card-image-placeholder">
                     <a href="#" class="btn btn-outline">Детальніше &rarr;</a>
                 </div>
             </div>
@@ -536,7 +539,7 @@
             <!-- Featured Card moved outside of grid to be full width -->
             <div class="featured-wrapper">
                 <div class="course-card featured-card">
-                    <div class="featured-image"></div>
+                    <img src="featured.jpg" alt="AI Режисер" class="featured-image">
                     <div class="featured-content">
                         <span class="badge">Найкраща ціна</span>
                         <h3>AI Режисер &mdash; повна програма</h3>
@@ -553,7 +556,7 @@
             <h2 class="about-label">Ellen Keyo - Автор курсу</h2>
             
             <div class="about-grid">
-                <div class="about-photo"></div>
+                <img src="author.jpg" alt="Ellen Keyo" class="about-photo">
                 
                 <div class="about-content">
                     <span class="about-role">Художниця · Дизайнерка · AI Creator</span>
