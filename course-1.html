@@ -180,28 +180,50 @@
             border: 0.5px solid var(--border-color);
         }
 
-        .program-block {
-            margin-bottom: 40px;
+        .program-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
         }
 
-        .program-block h3 {
-            color: var(--accent-color);
-            margin-bottom: 20px;
-            font-size: 20px;
+        @media (min-width: 768px) {
+            .program-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
-        .program-list {
+        .program-card {
+            text-align: left;
+            align-items: flex-start;
+        }
+
+        .program-card h3 {
+            min-height: 0;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .lesson-list {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 12px;
+            width: 100%;
         }
 
-        .program-item {
-            background: rgba(163, 35, 24, 0.05);
-            padding: 8px 16px;
-            border-radius: 8px;
+        .lesson-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 14px;
-            border: 0.5px solid rgba(163, 35, 24, 0.1);
+            color: #444;
+            padding-bottom: 8px;
+            border-bottom: 0.5px solid rgba(0,0,0,0.05);
+        }
+
+        .lesson-item::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
         }
 
         .audience-list {
@@ -296,49 +318,40 @@
     <main>
         <section class="hero">
             <h1>Основи Midjourney та художнє мислення</h1>
-            <p>Курс, який допоможе розібратися де шукати ідеї і як формувати свій стиль. На практиці вивчимо як будувати кадр, композицію і світло, і як писати промпти які дають результат.<br><br>Повністю розберемо Midjourney — інтерфейс, налаштування, стилі, відео. Після навчання ти впевнено працюєш з нейромережею і створюєш красиві реалістичні кадри та відео для Instagram і TikTok.</p>
+            <p>Курс про ідеї, стиль і Midjourney. Вчимося будувати кадр, писати промпти і створювати контент для Instagram і TikTok.</p>
         </section>
 
-        <div class="divider divider-centered"></div>
 
-        <section id="outcomes">
-            <h2 class="section-label">Що ти отримаєш</h2>
-            <div class="content-section">
-                <div class="grid-list">
-                    <div class="benefit-item">Розумієш основи композиції, світла та кольору</div>
-                    <div class="benefit-item">Вмієш працювати з інтерфейсом Midjourney</div>
-                    <div class="benefit-item">Створюєш власні арт-проєкти з нуля</div>
-                    <div class="benefit-item">Знаєш як писати промпти для потрібного результату</div>
-                </div>
-            </div>
-        </section>
-
-        <div class="divider divider-centered"></div>
 
         <section id="program">
             <h2 class="section-label">Програма курсу</h2>
             <div class="content-section">
-                <div class="program-block">
-                    <h3>Block 1 — Художнє мислення</h3>
-                    <div class="program-list">
-                        <span class="program-item">1.1 Пошук ідеї</span>
-                        <span class="program-item">1.2 Основи композиції</span>
-                        <span class="program-item">1.3 Світло</span>
-                        <span class="program-item">1.4 Колір</span>
-                        <span class="program-item">1.5 Кадрування</span>
-                        <span class="program-item">1.6 Промптінг</span>
+                <div class="program-grid">
+                    <!-- Block 1 -->
+                    <div class="course-card program-card">
+                        <h3>Block 1 — Художнє мислення</h3>
+                        <div class="lesson-list">
+                            <span class="lesson-item">Пошук ідеї</span>
+                            <span class="lesson-item">Основи композиції</span>
+                            <span class="lesson-item">Світло</span>
+                            <span class="lesson-item">Колір</span>
+                            <span class="lesson-item">Кадрування</span>
+                            <span class="lesson-item">Промптінг</span>
+                        </div>
                     </div>
-                </div>
-                <div class="program-block">
-                    <h3>Block 2 — Midjourney</h3>
-                    <div class="program-list">
-                        <span class="program-item">2.1 Вступ</span>
-                        <span class="program-item">2.2 Інтерфейс 1</span>
-                        <span class="program-item">2.3 Інтерфейс та налаштування</span>
-                        <span class="program-item">2.4 Налаштування та практика 1</span>
-                        <span class="program-item">2.5 Практика 2</span>
-                        <span class="program-item">2.6 Відео</span>
-                        <span class="program-item">2.7 Стилі</span>
+                    
+                    <!-- Block 2 -->
+                    <div class="course-card program-card">
+                        <h3>Block 2 — Midjourney</h3>
+                        <div class="lesson-list">
+                            <span class="lesson-item">Вступ</span>
+                            <span class="lesson-item">Інтерфейс</span>
+                            <span class="lesson-item">Інтерфейс та налаштування</span>
+                            <span class="lesson-item">Налаштування та практика</span>
+                            <span class="lesson-item">Практика</span>
+                            <span class="lesson-item">Відео</span>
+                            <span class="lesson-item">Стилі</span>
+                        </div>
                     </div>
                 </div>
             </div>
