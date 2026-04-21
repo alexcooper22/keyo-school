@@ -205,28 +205,27 @@
 
         .lesson-list {
             display: flex;
-            flex-direction: column;
-            gap: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
             width: 100%;
         }
 
         .lesson-pill {
-            background-color: #ffffff;
-            border: 1px solid #D5D0C8;
-            border-radius: 12px;
-            padding: 14px 20px;
+            background-color: #eeede9;
+            border: 1px solid #a32318;
+            border-radius: 20px;
+            padding: 8px 18px;
             text-align: left;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 500;
             color: var(--text-color);
-            display: block;
-            width: 100%;
-            transition: transform 0.2s, border-color 0.2s;
+            display: inline-block;
+            transition: all 0.2s;
         }
 
         .lesson-pill:hover {
-            border-color: var(--accent-color);
-            transform: translateX(4px);
+            background-color: var(--accent-color);
+            color: #ffffff;
         }
 
         .audience-list {
