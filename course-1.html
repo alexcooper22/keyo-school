@@ -228,20 +228,44 @@
             color: #ffffff;
         }
 
-        .audience-list {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+        .info-card {
+            background: white;
+            border: 1px solid #D5D0C8;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 24px;
+            text-align: left;
         }
 
-        .audience-item {
+        .info-card h3 {
+            font-size: 20px;
+            color: #1A1A1A;
+            margin-bottom: 20px;
+        }
+
+        .info-list {
             display: flex;
-            align-items: flex-start;
+            flex-direction: column;
             gap: 12px;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 3px solid var(--accent-color);
+        }
+
+        .info-item {
+            position: relative;
+            padding-left: 20px;
+            font-size: 15px;
+            color: #444;
+            line-height: 1.4;
+        }
+
+        .info-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background-color: #a32318;
+            border-radius: 50%;
         }
 
         .price-section {
@@ -357,15 +381,38 @@
             </div>
         </section>
 
-        <div class="divider divider-centered"></div>
+        <section id="details">
+            <div class="content-section" style="padding-top: 64px;">
+                <!-- Card 1 -->
+                <div class="info-card">
+                    <h3>Що дасть тобі курс</h3>
+                    <div class="info-list">
+                        <div class="info-item">Навчишся чітко формулювати промпти</div>
+                        <div class="info-item">Зможеш створювати реалістичні кадри та відео</div>
+                        <div class="info-item">Зможеш створювати серії фото в одному стилі для блогу чи бренду</div>
+                        <div class="info-item">Отримаєш базу для подальшого розвитку в сфері AI</div>
+                    </div>
+                </div>
 
-        <section id="audience">
-            <h2 class="section-label">Для кого курс</h2>
-            <div class="content-section">
-                <div class="audience-list">
-                    <div class="audience-item">Для тих, хто ніколи не працював з AI-інструментами</div>
-                    <div class="audience-item">Для творчих людей, які хочуть реалізувати свої ідеї</div>
-                    <div class="audience-item">Для тих, хто хоче створювати арт-проєкти з нуля</div>
+                <!-- Card 2 -->
+                <div class="info-card">
+                    <h3>Для кого курс</h3>
+                    <div class="info-list">
+                        <div class="info-item">Для новачків, які хочуть зрозуміти AI з нуля</div>
+                        <div class="info-item">Для контент-кріейторів, яким потрібні унікальні візуали</div>
+                        <div class="info-item">Для дизайнерів, фотографів та ілюстраторів, яким потрібен Midjourney у роботі</div>
+                        <div class="info-item">Для власників брендів, яким потрібно створювати стильні візуали для продуктів, реклами та презентацій</div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="info-card">
+                    <h3>Що потрібно для проходження</h3>
+                    <div class="info-list">
+                        <div class="info-item">Комп'ютер, ноутбук або планшет</div>
+                        <div class="info-item">Доступ до інтернету</div>
+                        <div class="info-item">Базова підписка Midjourney 10$</div>
+                    </div>
                 </div>
             </div>
         </section>
