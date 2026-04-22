@@ -27,14 +27,38 @@
         }
 
         body {
-            background: linear-gradient(to bottom, #ffffff 0%, #ffffff 20%, #4a1a7a 60%, #120330 100%);
             color: var(--text-color);
             font-family: var(--font-body);
             -webkit-font-smoothing: antialiased;
             line-height: 1.5;
             overflow-x: hidden;
             min-height: 100vh;
+            position: relative;
         }
+
+        .bg-strips {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bg-strip {
+            width: 100%;
+            height: 14.285vh;
+        }
+
+        .bg-strip-1 { background: linear-gradient(to bottom, #ffffff, #e8d5f5); }
+        .bg-strip-2 { background: linear-gradient(to bottom, #e8d5f5, #c9a8eb); }
+        .bg-strip-3 { background: linear-gradient(to bottom, #c9a8eb, #9b5fc0); }
+        .bg-strip-4 { background: linear-gradient(to bottom, #9b5fc0, #6b2d9e); }
+        .bg-strip-5 { background: linear-gradient(to bottom, #6b2d9e, #3d1070); }
+        .bg-strip-6 { background: linear-gradient(to bottom, #3d1070, #120330); }
+        .bg-strip-7 { background: linear-gradient(to bottom, #120330, #120330); }
 
         a {
             text-decoration: none;
@@ -195,7 +219,10 @@
         .list-card {
             background-color: #ffffff;
             border-radius: 16px;
-            padding: 24px 28px;
+            padding: 36px 28px;
+            margin-bottom: 16px;
+            outline: 1px solid rgba(255, 255, 255, 0.4);
+            outline-offset: 6px;
             display: flex;
             flex-direction: column;
             gap: 16px;
@@ -320,6 +347,15 @@
     </style>
 </head>
 <body>
+    <div class="bg-strips">
+        <div class="bg-strip bg-strip-1"></div>
+        <div class="bg-strip bg-strip-2"></div>
+        <div class="bg-strip bg-strip-3"></div>
+        <div class="bg-strip bg-strip-4"></div>
+        <div class="bg-strip bg-strip-5"></div>
+        <div class="bg-strip bg-strip-6"></div>
+        <div class="bg-strip bg-strip-7"></div>
+    </div>
 
     <header id="header">
         <a href="#" class="logo">Ellen Keyo</a>
@@ -348,12 +384,10 @@
             <!-- Card 1 -->
             <div class="list-card">
                 <div class="card-content">
-                    <span class="card-label">Блок 1</span>
                     <h3>Основи Midjourney та художнє мислення</h3>
                     <p class="card-desc">Курс про ідеї, стиль і Midjourney</p>
                 </div>
                 <div class="card-action">
-                    <span class="card-price">4 900 грн</span>
                     <a href="course-1.html" class="card-btn">Детальніше &rarr;</a>
                 </div>
             </div>
@@ -361,12 +395,10 @@
             <!-- Card 2 -->
             <div class="list-card">
                 <div class="card-content">
-                    <span class="card-label">Блок 2</span>
                     <h3>Аватар та робота над комерційними проєктами</h3>
                     <p class="card-desc">Створюємо аватара і комерційні продукти</p>
                 </div>
                 <div class="card-action">
-                    <span class="card-price">6 900 грн</span>
                     <a href="course-2.html" class="card-btn">Детальніше &rarr;</a>
                 </div>
             </div>
@@ -374,12 +406,10 @@
             <!-- Card 3 -->
             <div class="list-card">
                 <div class="card-content">
-                    <span class="card-label">Блок 3</span>
                     <h3>Анімація, відео та монтаж з AI</h3>
                     <p class="card-desc">Створюємо відео та анімацію з AI</p>
                 </div>
                 <div class="card-action">
-                    <span class="card-price">(ціна уточнюється)</span>
                     <a href="#" class="card-btn">Детальніше &rarr;</a>
                 </div>
             </div>
@@ -387,12 +417,10 @@
             <!-- Card 4 -->
             <div class="list-card">
                 <div class="card-content">
-                    <span class="card-label">Блок 4</span>
                     <h3>Розвиток Instagram AI-креатора</h3>
                     <p class="card-desc">Стратегія, контент і монетизація</p>
                 </div>
                 <div class="card-action">
-                    <span class="card-price">(ціна уточнюється)</span>
                     <a href="#" class="card-btn">Детальніше &rarr;</a>
                 </div>
             </div>
@@ -400,12 +428,10 @@
             <!-- Card AI Reg -->
             <div class="list-card">
                 <div class="card-content">
-                    <span class="card-label">AI Режисер</span>
                     <h3>Повна програма — всі 4 блоки</h3>
                     <p class="card-desc">Включає всі блоки зі знижкою 20%</p>
                 </div>
                 <div class="card-action">
-                    <span class="card-price">(ціна уточнюється)</span>
                     <a href="#" class="card-btn">Детальніше &rarr;</a>
                 </div>
             </div>
