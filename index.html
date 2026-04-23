@@ -106,13 +106,13 @@
             color: #8820b0;
             margin-bottom: 24px;
             display: inline-block;
-            font-size: 22px;
+            font-size: 16px;
             font-weight: 700;
             letter-spacing: 0.12em;
         }
 
         .hero h1 {
-            font-size: clamp(30px, 4.5vw, 54px);
+            font-size: clamp(36px, 5vw, 60px);
             line-height: 1.1;
             margin-bottom: 24px;
             color: #1A1A1A;
@@ -204,17 +204,13 @@
             box-shadow: 0 30px 60px -15px rgb(139 92 246 / 0.35);
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             gap: 16px;
             text-align: left;
+            min-height: 220px;
         }
 
-        @media (min-width: 768px) {
-            .list-card {
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-            }
-        }
+
 
         .card-content {
             flex: 1;
@@ -362,57 +358,37 @@
         <section id="courses" class="courses-list" style="margin-top: 48px;">
             <!-- Card 1 -->
             <div class="list-card">
-                <div class="card-content">
-                    <h3>Основи Midjourney та художнє мислення</h3>
-                    <p class="card-desc">Курс про ідеї, стиль і Midjourney</p>
-                </div>
-                <div class="card-action">
-                    <a href="course-1.html" class="card-btn">Детальніше &rarr;</a>
-                </div>
+                <h3>Основи Midjourney та художнє мислення</h3>
+                <p class="card-desc">Курс про ідеї, стиль і Midjourney</p>
+                <a href="course-1.html" class="card-btn">Детальніше &rarr;</a>
             </div>
 
             <!-- Card 2 -->
             <div class="list-card">
-                <div class="card-content">
-                    <h3>Аватар та робота над комерційними проєктами</h3>
-                    <p class="card-desc">Створюємо аватара і комерційні продукти</p>
-                </div>
-                <div class="card-action">
-                    <a href="course-2.html" class="card-btn">Детальніше &rarr;</a>
-                </div>
+                <h3>Аватар та робота над комерційними проєктами</h3>
+                <p class="card-desc">Створюємо аватара і комерційні продукты</p>
+                <a href="course-2.html" class="card-btn">Детальніше &rarr;</a>
             </div>
 
             <!-- Card 3 -->
             <div class="list-card">
-                <div class="card-content">
-                    <h3>Анімація, відео та монтаж з AI</h3>
-                    <p class="card-desc">Створюємо відео та анімацію з AI</p>
-                </div>
-                <div class="card-action">
-                    <a href="#" class="card-btn">Детальніше &rarr;</a>
-                </div>
+                <h3>Анімація, відео та монтаж з AI</h3>
+                <p class="card-desc">Створюємо відео та анімацію з AI</p>
+                <a href="#" class="card-btn">Детальніше &rarr;</a>
             </div>
 
             <!-- Card 4 -->
             <div class="list-card">
-                <div class="card-content">
-                    <h3>Розвиток Instagram AI-креатора</h3>
-                    <p class="card-desc">Стратегія, контент і монетизація</p>
-                </div>
-                <div class="card-action">
-                    <a href="#" class="card-btn">Детальніше &rarr;</a>
-                </div>
+                <h3>Розвиток Instagram AI-креатора</h3>
+                <p class="card-desc">Стратегія, контент і монетизація</p>
+                <a href="#" class="card-btn">Детальніше &rarr;</a>
             </div>
 
             <!-- Card AI Reg -->
             <div class="list-card">
-                <div class="card-content">
-                    <h3>Повна програма — всі 4 блоки</h3>
-                    <p class="card-desc">Включає всі блоки зі знижкою 20%</p>
-                </div>
-                <div class="card-action">
-                    <a href="#" class="card-btn">Детальніше &rarr;</a>
-                </div>
+                <h3>Повна програма — всі 4 блоки</h3>
+                <p class="card-desc">Включає всі блоки зі знижкою 20%</p>
+                <a href="#" class="card-btn">Детальніше &rarr;</a>
             </div>
         </section>
     </main>
