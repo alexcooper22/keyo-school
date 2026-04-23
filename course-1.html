@@ -50,13 +50,6 @@
             font-weight: 600;
         }
 
-        .tag {
-            font-size: 12px;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-        }
-
         /* Header */
         header {
             position: static;
@@ -131,21 +124,6 @@
             color: white;
         }
 
-        .btn-primary:hover {
-            background-color: #8c1c13;
-        }
-
-        .divider {
-            height: 0.5px;
-            background-color: var(--border-color);
-            margin: 0 24px;
-            max-width: 1200px;
-        }
-        
-        .divider-centered {
-            margin: 0 auto;
-        }
-
         .section-label {
             text-align: center;
             font-size: 11px;
@@ -162,44 +140,14 @@
             margin: 0 auto;
         }
 
-        .grid-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-        }
-
-        @media (min-width: 768px) {
-            .grid-list {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .benefit-item {
-            background-color: #ffffff;
-            padding: 24px;
-            border-radius: 16px;
-            border: 1px solid #D5D0C8;
-        }
-
-        .program-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-        }
-
-        @media (min-width: 768px) {
-            .program-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
         .carousel-container {
             display: flex;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
             gap: 12px;
-            padding: 0 60px;
+            padding: 0 24px;
+            scroll-padding-left: 24px;
             scrollbar-width: none;
         }
         .carousel-container::-webkit-scrollbar {
@@ -207,7 +155,7 @@
         }
 
         .lesson-card {
-            width: calc(100vw - 120px);
+            width: calc(100vw - 160px);
             max-width: 400px;
             flex-shrink: 0;
             border-radius: 20px;
@@ -299,55 +247,10 @@
             border-radius: 50%;
         }
 
-        .price-section {
-            display: none;
-        }
-
-        .price-tag {
-            display: none;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--bg-color);
-            border-top: 0.5px solid var(--border-color);
-            padding: 48px 24px 24px;
-            text-align: center;
-        }
-
-        .footer-logo {
-            font-family: var(--font-headings);
-            color: var(--accent-color);
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 24px;
-        }
-
-        .footer-contact {
-            margin-bottom: 24px;
-        }
-
-        .footer-links {
+        .qa-list {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 24px;
-            font-size: 14px;
-            margin-bottom: 32px;
-        }
-
-        .footer-legal {
-            line-height: 1.8;
-            color: #666;
-            font-size: 13px;
-        }
-        
-        .qa-item {
-            margin-bottom: 16px;
-        }
-
-        .qa-item:last-child {
-            margin-bottom: 0;
+            flex-direction: column;
+            gap: 16px;
         }
 
         .qa-question {
@@ -362,6 +265,21 @@
             font-weight: 400;
             color: #6b6760;
             font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-color);
+            border-top: 0.5px solid var(--border-color);
+            padding: 48px 24px 48px;
+            text-align: center;
+        }
+
+        .footer-legal {
+            line-height: 1.8;
+            color: #666;
+            font-size: 13px;
+            margin-top: 32px;
         }
     </style>
 </head>
@@ -379,7 +297,6 @@
                 <a href="#" class="btn btn-primary">4 900 грн — Придбати курс</a>
             </div>
         </section>
-        
 
         <section id="program" style="margin-bottom: 32px;">
             <h2 class="section-label" style="margin-top: 80px; padding-left: 24px;">Програма курсу</h2>
@@ -387,6 +304,14 @@
             <!-- Block 1 -->
             <h3 class="block-title" style="padding-left: 24px;">Block 1 — Художнє мислення</h3>
             <div class="carousel-container">
+                <!-- Clone of last card for peek -->
+                <div class="lesson-card" aria-hidden="true">
+                    <img src="course-1.jpg" alt="">
+                    <div class="lesson-card-info bg-purple-light">
+                        <div class="lesson-card-name">Промптінг</div>
+                        <div class="lesson-card-desc">Пишемо промпти які дають результат</div>
+                    </div>
+                </div>
                 <div class="lesson-card">
                     <img src="course-1.jpg" alt="Lesson 1">
                     <div class="lesson-card-info bg-pink-soft">
@@ -427,6 +352,14 @@
             <!-- Block 2 -->
             <h3 class="block-title" style="padding-left: 24px;">Block 2 — Midjourney</h3>
             <div class="carousel-container">
+                <!-- Clone of last card for peek -->
+                <div class="lesson-card" aria-hidden="true">
+                    <img src="course-1.jpg" alt="">
+                    <div class="lesson-card-info bg-purple-light">
+                        <div class="lesson-card-name">Стилі</div>
+                        <div class="lesson-card-desc">Вивчаємо та застосовуємо різні стилі</div>
+                    </div>
+                </div>
                 <div class="lesson-card">
                     <img src="course-1.jpg" alt="Lesson 6">
                     <div class="lesson-card-info bg-pink-soft">
@@ -464,7 +397,6 @@
                 </div>
             </div>
         </section>
-        
 
         <section id="details" style="margin-bottom: 32px;">
             <div class="content-section">
@@ -510,7 +442,7 @@
                         </div>
                         <div class="qa-item">
                             <span class="qa-question">Коли я отримаю доступ?</span>
-                            <p class="qa-answer">Одразу після оплати — доступ надходить на твою пошту.</p>
+                            <p class="qa-answer">Одразу після оплати — доступ надходит на твою пошту.</p>
                         </div>
                         <div class="qa-item">
                             <span class="qa-question">Як довго я маю доступ до курсу?</span>
@@ -520,8 +452,6 @@
                 </div>
             </div>
         </section>
-
-
     </main>
 
     <footer>
@@ -543,9 +473,7 @@
             <a href="#">Публічна оферта</a>
         </div>
         
-        <div class="footer-divider"></div>
-        
-        <div class="footer-legal" style="line-height: 1.8; color: #666; font-size: 13px;">
+        <div class="footer-legal">
             &copy; 2026 ФОП БОНДАР ОЛЕНА СЕРГІЇВНА<br>
             РНОКПП / ЄДРПОУ: 3403609226<br>
             адреса: Україна, м. Київ, вул. І.Франка 42, 02000<br>
@@ -562,6 +490,16 @@
             } else {
                 header.classList.remove('scrolled');
             }
+        });
+
+        // Carousel initialization for peek effect
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.carousel-container').forEach(c => {
+                const card = c.querySelectorAll('.lesson-card')[1]; // Scroll to first actual card (skip clone)
+                if (card) {
+                    c.scrollLeft = card.offsetLeft - 24;
+                }
+            });
         });
     </script>
 </body>

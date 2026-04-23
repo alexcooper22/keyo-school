@@ -1,0 +1,604 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РћСЃРЅРѕРІРё Midjourney С‚Р° С…СѓРґРѕР¶РЅС” РјРёСЃР»РµРЅРЅСЏ - Ellen Keyo School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1A1A1A;
+            --accent-color: #8820b0;
+            --card-bg: #ffffff;
+            --border-color: #D5D0C8;
+            --placeholder-bg: #D8D3CC;
+            
+            --font-headings: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Typography */
+        h1, h2, h3, .logo {
+            font-family: var(--font-headings);
+            font-weight: 600;
+        }
+
+        .tag {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        /* Header */
+        header {
+            position: static;
+            width: 100%;
+            background-color: transparent;
+            backdrop-filter: blur(8px);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.3s;
+        }
+
+        header.scrolled {
+            border-bottom: 1px solid rgba(213, 208, 200, 0.2);
+        }
+
+        .logo {
+            font-size: 24px;
+            color: #1A1A1A;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 24px 0;
+            text-align: center;
+            position: relative;
+            background-color: #ffffff;
+            width: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: clamp(16px, 2vw, 20px);
+            color: #1A1A1A;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 500;
+        }
+
+        /* Common Elements */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #8c1c13;
+        }
+
+        .divider {
+            height: 0.5px;
+            background-color: var(--border-color);
+            margin: 0 24px;
+            max-width: 1200px;
+        }
+        
+        .divider-centered {
+            margin: 0 auto;
+        }
+
+        .section-label {
+            text-align: center;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: #6b6760;
+            margin: 64px 0 24px;
+        }
+
+        .content-section {
+            padding: 0 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .grid-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .grid-list {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .benefit-item {
+            background-color: #ffffff;
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid #D5D0C8;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .program-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            gap: 12px;
+            padding: 0 48px;
+            scroll-padding-left: 48px;
+            scrollbar-width: none;
+        }
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .lesson-card {
+            width: calc(100vw - 140px);
+            max-width: 400px;
+            flex-shrink: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid #D5D0C8;
+            scroll-snap-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
+        }
+
+        .lesson-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .lesson-card-info {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lesson-card-name {
+            font-weight: 700;
+            font-size: 16px;
+            color: #1A1A1A;
+        }
+
+        .lesson-card-desc {
+            font-size: 13px;
+            color: rgba(0,0,0,0.6);
+            margin-top: 6px;
+        }
+
+        .bg-pink-soft { background-color: #ffaee0; }
+        .bg-purple-soft { background-color: #d4a8ff; }
+        .bg-purple-deep { background-color: #8820b0; }
+        .bg-pink-light { background-color: #ffcdf0; }
+        .bg-purple-light { background-color: #c084fc; }
+
+        .block-title {
+            color: #8820b0;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 8px;
+            margin-top: 32px;
+        }
+
+        .info-card {
+            background-color: #ffffff;
+            border: 1px solid #D5D0C8;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .info-card h3 {
+            font-size: 20px;
+            color: #1A1A1A;
+            margin-bottom: 20px;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .info-item {
+            position: relative;
+            padding-left: 20px;
+            font-size: 15px;
+            color: #444;
+            line-height: 1.4;
+        }
+
+        .info-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background-color: #8820b0;
+            border-radius: 50%;
+        }
+
+        .price-section {
+            display: none;
+        }
+
+        .price-tag {
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-color);
+            border-top: 0.5px solid var(--border-color);
+            padding: 48px 24px 24px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-headings);
+            color: var(--accent-color);
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .footer-contact {
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+
+        .footer-legal {
+            line-height: 1.8;
+            color: #666;
+            font-size: 13px;
+        }
+        
+        .qa-item {
+            margin-bottom: 16px;
+        }
+
+        .qa-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .qa-question {
+            font-weight: 700;
+            color: #1A1A1A;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 15px;
+        }
+
+        .qa-answer {
+            font-weight: 400;
+            color: #6b6760;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <a href="index.html" class="logo">Ellen Keyo</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content" style="padding-bottom: 80px;">
+                <h1>РћСЃРЅРѕРІРё Midjourney С‚Р° С…СѓРґРѕР¶РЅС” РјРёСЃР»РµРЅРЅСЏ</h1>
+                <p>РљСѓСЂСЃ РїСЂРѕ С–РґРµС—, СЃС‚РёР»СЊ С– Midjourney. Р’С‡РёРјРѕСЃСЏ Р±СѓРґСѓРІР°С‚Рё РєР°РґСЂ, РїРёСЃР°С‚Рё РїСЂРѕРјРїС‚Рё С– СЃС‚РІРѕСЂСЋРІР°С‚Рё РєРѕРЅС‚РµРЅС‚ РґР»СЏ Instagram С– TikTok.</p>
+                     <section id="program" style="margin-bottom: 32px;">
+            <h2 class="section-label" style="margin-top: 80px; padding-left: 24px;">РџСЂРѕРіСЂР°РјР° РєСѓСЂСЃСѓ</h2>
+            
+            <!-- Block 1 -->
+            <h3 class="block-title" style="padding-left: 24px;">Block 1 вЂ” РҐСѓРґРѕР¶РЅС” РјРёСЃР»РµРЅРЅСЏ</h3>
+            <div class="carousel-container">
+                <!-- Clone of last card for peek -->
+                <div class="lesson-card" aria-hidden="true">
+                    <img src="course-1.jpg" alt="">
+                    <div class="lesson-card-info bg-purple-light">
+                        <div class="lesson-card-name">РџСЂРѕРјРїС‚С–РЅРі</div>
+                        <div class="lesson-card-desc">РџРёС€РµРјРѕ РїСЂРѕРјРїС‚Рё СЏРєС– РґР°СЋС‚СЊ СЂРµР·СѓР»СЊС‚Р°С‚</div>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <img src="course-1.jpg" alt="Lesson 1">
+                    <div class="lesson-card-info bg-pink-soft">
+                        <div class="lesson-card-name">РџРѕС€СѓРє С–РґРµС—</div>
+                        <div class="lesson-card-desc">Р—РЅР°С…РѕРґРёРјРѕ РґР¶РµСЂРµР»Р° РЅР°С‚С…РЅРµРЅРЅСЏ С‚Р° С„РѕСЂРјСѓС”РјРѕ С–РґРµС—</div>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <img src="course-1.jpg" alt="Lesson 2">
+                    <div class="lesson-card-info bg-purple-soft">
+                        <div class="lesson-card-name">РћСЃРЅРѕРІРё РєРѕРјРїРѕР·РёС†С–С—</div>
+                        <div class="lesson-card-desc">РџСЂР°РІРёР»Р° РїРѕР±СѓРґРѕРІРё СЃРёР»СЊРЅРѕРіРѕ РєР°РґСЂСѓ</div>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <img src="course-1.jpg" alt="Lesson 3">
+                    <div class="lesson-card-info bg-purple-deep">
+                        <div class="lesson-card-name" style="color: white;">РЎРІС–С‚Р»Рѕ</div>
+                        <div class="lesson-card-desc" style="color: rgba(255,255,255,0.8);">РЇРє СЃРІС–С‚Р»Рѕ РІРїР»РёРІР°С” РЅР° РЅР°СЃС‚СЂС–Р№ Р·РѕР±СЂР°Р¶РµРЅРЅСЏ</div>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <img src="course-1.jpg" alt="Lesson 4">
+                    <div class="lesson-card-info bg-pink-light">
+                        <div class="lesson-card-name">РљР°РґСЂСѓРІР°РЅРЅСЏ</div>
+                        <div class="lesson-card-desc">Р’РёР±С–СЂ СЂР°РєСѓСЂСЃСѓ С‚Р° СЂР°РјРєРё</div>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <img src="course-1.jpg" alt="Lesson 5">
+                    <div class="lesson-card-info bg-purple-light">
+                        <div class="lesson-card-name">РџСЂРѕРјРїС‚С–РЅРі</div>
+                        <div class="lesson-card-desc">РџРёС€РµРјРѕ РїСЂРѕРјРїС‚Рё СЏРєС– РґР°СЋС‚СЊ СЂРµР·СѓР»СЊС‚Р°С‚</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Block 2 -->
+            <h3 class="block-title" style="padding-left: 24px;">Block 2 вЂ” Midjourney</h3>
+            <div class="carousel-container">
+                <!-- Clone of last card for peek -->
+                <div class="lesson-card" aria-hidden="true">
+                    <img src="course-1.jpg" alt="">
+                    <div class="lesson-card-info bg-purple-light">
+                        <div class="lesson-card-name">РЎС‚РёР»С–</div>
+                        <div class="lesson-card-desc">Р’РёРІС‡Р°С”РјРѕ С‚Р° Р·Р°СЃС‚РѕСЃРѕРІСѓС”РјРѕ СЂС–Р·РЅС– СЃС‚РёР»С–</div>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <img src="course-1.jpg" alt="Lesson 6">
+                    <div class="lesson-card-info bg-pink-soft">
+                        <div class="lesson-card-name">Р†РЅС‚РµСЂС„РµР№СЃ</div>
+                        <div class="lesson-card-desc">РџРѕРІРЅРёР№ РѕРіР»СЏРґ С–РЅСЃС‚СЂСѓРјРµРЅС‚С–РІ Midjourney</div>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <img src="course-1.jpg" alt="Lesson 7">
+                    <div class="lesson-card-info bg-purple-soft">
+                        <div class="lesson-card-name">РќР°Р»Р°С€С‚СѓРІР°РЅРЅСЏ</div>
+                        <div class="lesson-card-desc">РџР°СЂР°РјРµС‚СЂРё С‚Р° РЅР°Р»Р°С€С‚СѓРІР°РЅРЅСЏ РїС–Рґ СЃРІС–Р№ СЃС‚РёР»СЊ</div>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <img src="course-1.jpg" alt="Lesson 8">
+                    <div class="lesson-card-info bg-purple-deep">
+                        <div class="lesson-card-name" style="color: white;">Р РѕР±РѕС‚Р° Р· Р·РѕР±СЂР°Р¶РµРЅРЅСЏРјРё</div>
+                        <div class="lesson-card-desc" style="color: rgba(255,255,255,0.8);">РџСЂР°РєС‚РёРєР° СЃС‚РІРѕСЂРµРЅРЅСЏ СЂРµР°Р»С–СЃС‚РёС‡РЅРёС… РєР°РґСЂС–РІ</div>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <img src="course-1.jpg" alt="Lesson 9">
+                    <div class="lesson-card-info bg-pink-light">
+                        <div class="lesson-card-name">Р РѕР±РѕС‚Р° Р· Р°РЅС–РјР°С†С–С”СЋ</div>
+                        <div class="lesson-card-desc">РћР¶РёРІР»СЏС”РјРѕ Р·РѕР±СЂР°Р¶РµРЅРЅСЏ Сѓ РІС–РґРµРѕ</div>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <img src="course-1.jpg" alt="Lesson 10">
+                    <div class="lesson-card-info bg-purple-light">
+                        <div class="lesson-card-name">РЎС‚РёР»С–</div>
+                        <div class="lesson-card-desc">Р’РёРІС‡Р°С”РјРѕ С‚Р° Р·Р°СЃС‚РѕСЃРѕРІСѓС”РјРѕ СЂС–Р·РЅС– СЃС‚РёР»С–</div>
+                    </div>
+                </div>
+            </div>
+        </section>‚Р° Р·Р°СЃС‚РѕСЃРѕРІСѓС”РјРѕ СЂС–Р·РЅС– СЃС‚РёР»С–</div>
+                    </div>
+                </div>
+            </div>div class="lesson-card-desc">РћР¶РёРІР»СЏС”РјРѕ Р·РѕР±СЂР°Р¶РµРЅРЅСЏ Сѓ РІС–РґРµРѕ</div>
+                    </div>
+                </div>
+                <div class="lesson-card">
+                    <img src="course-1.jpg" alt="Lesson 10">
+                    <div class="lesson-card-info bg-purple-light">
+                        <div class="lesson-card-name">РЎС‚РёР»С–</div>
+                        <div class="lesson-card-desc">Р’РёРІС‡Р°С”РјРѕ С‚Р° Р·Р°СЃС‚РѕСЃРѕРІСѓС”РјРѕ СЂС–Р·РЅС– СЃС‚РёР»С–</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="details" style="margin-bottom: 32px;">
+            <div class="content-section">
+                <!-- Card 1 -->
+                <div class="info-card">
+                    <h3>Р©Рѕ РґР°СЃС‚СЊ С‚РѕР±С– РєСѓСЂСЃ</h3>
+                    <div class="info-list">
+                        <div class="info-item">РќР°РІС‡РёС€СЃСЏ С‡С–С‚РєРѕ С„РѕСЂРјСѓР»СЋРІР°С‚Рё РїСЂРѕРјРїС‚Рё</div>
+                        <div class="info-item">Р—РјРѕР¶РµС€ СЃС‚РІРѕСЂСЋРІР°С‚Рё СЂРµР°Р»С–СЃС‚РёС‡РЅС– РєР°РґСЂРё С‚Р° РІС–РґРµРѕ</div>
+                        <div class="info-item">Р—РјРѕР¶РµС€ СЃС‚РІРѕСЂСЋРІР°С‚Рё СЃРµСЂС–С— С„РѕС‚Рѕ РІ РѕРґРЅРѕРјСѓ СЃС‚РёР»С– РґР»СЏ Р±Р»РѕРіСѓ С‡Рё Р±СЂРµРЅРґСѓ</div>
+                        <div class="info-item">РћС‚СЂРёРјР°С”С€ Р±Р°Р·Сѓ РґР»СЏ РїРѕРґР°Р»СЊС€РѕРіРѕ СЂРѕР·РІРёС‚РєСѓ РІ СЃС„РµСЂС– AI</div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="info-card">
+                    <h3>Р”Р»СЏ РєРѕРіРѕ РєСѓСЂСЃ</h3>
+                    <div class="info-list">
+                        <div class="info-item">Р”Р»СЏ РЅРѕРІР°С‡РєС–РІ, СЏРєС– С…РѕС‡СѓС‚СЊ Р·СЂРѕР·СѓРјС–С‚Рё AI Р· РЅСѓР»СЏ</div>
+                        <div class="info-item">Р”Р»СЏ РєРѕРЅС‚РµРЅС‚-РєСЂС–РµР№С‚РѕСЂС–РІ, СЏРєРёРј РїРѕС‚СЂС–Р±РЅС– СѓРЅС–РєР°Р»СЊРЅС– РІС–Р·СѓР°Р»Рё</div>
+                        <div class="info-item">Р”Р»СЏ РґРёР·Р°Р№РЅРµСЂС–РІ, С„РѕС‚РѕРіСЂР°С„С–РІ С‚Р° С–Р»СЋСЃС‚СЂР°С‚РѕСЂС–РІ, СЏРєРёРј РїРѕС‚СЂС–Р±РµРЅ Midjourney Сѓ СЂРѕР±РѕС‚С–</div>
+                        <div class="info-item">Р”Р»СЏ РІР»Р°СЃРЅРёРєС–РІ Р±СЂРµРЅРґС–РІ, СЏРєРёРј РїРѕС‚СЂС–Р±РЅРѕ СЃС‚РІРѕСЂСЋРІР°С‚Рё СЃС‚РёР»СЊРЅС– РІС–Р·СѓР°Р»Рё РґР»СЏ РїСЂРѕРґСѓРєС‚С–РІ, СЂРµРєР»Р°РјРё С‚Р° РїСЂРµР·РµРЅС‚Р°С†С–Р№</div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="info-card">
+                    <h3>Р©Рѕ РїРѕС‚СЂС–Р±РЅРѕ РґР»СЏ РїСЂРѕС…РѕРґР¶РµРЅРЅСЏ</h3>
+                    <div class="info-list">
+                        <div class="info-item">РљРѕРјРї'СЋС‚РµСЂ, РЅРѕСѓС‚Р±СѓРє Р°Р±Рѕ РїР»Р°РЅС€РµС‚</div>
+                        <div class="info-item">Р”РѕСЃС‚СѓРї РґРѕ С–РЅС‚РµСЂРЅРµС‚Сѓ</div>
+                        <div class="info-item">Р‘Р°Р·РѕРІР° РїС–РґРїРёСЃРєР° Midjourney 10$</div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="info-card">
+                    <h3>Q&A</h3>
+                    <div class="qa-list">
+                        <div class="qa-item">
+                            <span class="qa-question">РЇРє РїСЂРѕС…РѕРґРёС‚СЊ РЅР°РІС‡Р°РЅРЅСЏ?</span>
+                            <p class="qa-answer">Р’СЃС– РІС–РґРµРѕ РґРѕСЃС‚СѓРїРЅС– РЅР° РїР»Р°С‚С„РѕСЂРјС– РІ Р·Р°РїРёСЃСѓ.</p>
+                        </div>
+                        <div class="qa-item">
+                            <span class="qa-question">РљРѕР»Рё СЏ РѕС‚СЂРёРјР°СЋ РґРѕСЃС‚СѓРї?</span>
+                            <p class="qa-answer">РћРґСЂР°Р·Сѓ РїС–СЃР»СЏ РѕРїР»Р°С‚Рё вЂ” РґРѕСЃС‚СѓРї РЅР°РґС…РѕРґРёС‚СЊ РЅР° С‚РІРѕСЋ РїРѕС€С‚Сѓ.</p>
+                        </div>
+                        <div class="qa-item">
+                            <span class="qa-question">РЇРє РґРѕРІРіРѕ СЏ РјР°СЋ РґРѕСЃС‚СѓРї РґРѕ РєСѓСЂСЃСѓ?</span>
+                            <p class="qa-answer">Р”РѕСЃС‚СѓРї РґРѕ РїРµСЂРµРіР»СЏРґСѓ РЅР°РґР°С”С‚СЊСЃСЏ РЅР° С€С–СЃС‚СЊ РјС–СЃСЏС†С–РІ.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <div class="footer-contact" style="margin-bottom: 24px;">
+            <p style="font-size: 16px; color: var(--text-color);">РЇРєС‰Рѕ Сѓ С‚РµР±Рµ Р·Р°Р»РёС€РёР»РёСЃСЊ Р·Р°РїРёС‚Р°РЅРЅСЏ, РјРѕР¶РµС€ РЅР°РїРёcР°С‚Рё РјРµРЅС– РІ Telegram вЂ” <a href="https://t.me/ellenakeyo" target="_blank" style="color: var(--accent-color); font-weight: 600;">@ellenakeyo</a></p>
+        </div>
+        
+        <div style="display:flex; justify-content:center; gap:24px; margin-bottom: 24px;">
+          <a href="https://www.instagram.com/ellen.keyo/" target="_blank" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8820b0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="#8820b0" stroke="none"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@ellen.keyo" target="_blank" aria-label="TikTok">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#8820b0"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.16 8.16 0 0 0 4.77 1.52V7.12a4.85 4.85 0 0 1-1-.43z"/></svg>
+          </a>
+        </div>
+
+        <div class="footer-links" style="margin-bottom: 32px; display: flex; justify-content: center; gap: 24px; font-size: 14px;">
+            <a href="#">РџРѕР»С–С‚РёРєР° РєРѕРЅС„С–РґРµРЅС†С–Р№РЅРѕСЃС‚С–</a>
+            <a href="#">РџСѓР±Р»С–С‡РЅР° РѕС„РµСЂС‚Р°</a>
+        </div>
+        
+        <div class="footer-divider"></div>
+        
+        <div class="footer-legal" style="line-height: 1.8; color: #666; font-size: 13px;">
+            &copy; 2026 Р¤РћРџ Р‘РћРќР”РђР  РћР›Р•РќРђ РЎР•Р Р“Р†Р‡Р’РќРђ<br>
+            Р РќРћРљРџРџ / Р„Р”Р РџРћРЈ: 3403609226<br>
+            Р°РґСЂРµСЃР°: РЈРєСЂР°С—РЅР°, Рј. РљРёС—РІ, РІСѓР». Р†.Р¤СЂР°РЅРєР° 42, 02000<br>
+            С‚РµР»РµС„РѕРЅ: +380965674504<br>
+            email: info@ellenkeyo.com
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Carousel initialization for peek effect
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.carousel-container').forEach(c => {
+                const card = c.querySelector('.lesson-card');
+                if (card) {
+                    c.scrollLeft = card.offsetWidth - 48;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
