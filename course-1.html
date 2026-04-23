@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <style>
         :root {
             --bg-color: #ffffff;
@@ -141,22 +143,12 @@
             margin: 0 auto;
         }
 
-        .carousel-wrapper {
-            position: relative;
+        .swiper {
             width: 100%;
-            overflow: hidden;
             margin-bottom: 48px;
         }
 
-        .carousel-track {
-            display: flex;
-            gap: 12px;
-            will-change: transform;
-        }
-
         .carousel-card {
-            min-width: calc(100% - 80px);
-            flex-shrink: 0;
             border-radius: 20px;
             overflow: hidden;
             background: #ffffff;
@@ -301,41 +293,51 @@
             
             <!-- Block 1 -->
             <h3 class="block-title" style="padding-left: 24px;">Block 1 — Художнє мислення</h3>
-            <div class="carousel-wrapper">
-                <div class="carousel-track">
-                    <div class="carousel-card">
-                        <img src="course-1.jpg" alt="Lesson 1">
-                        <div class="carousel-card-info bg-pink-soft">
-                            <div class="carousel-card-name">Пошук ідеї</div>
-                            <div class="carousel-card-desc">Знаходимо джерела натхнення та формуємо ідеї</div>
+            <div class="swiper swiper-block1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <img src="course-1.jpg" alt="Lesson 1">
+                            <div class="carousel-card-info bg-pink-soft">
+                                <div class="carousel-card-name">Пошук ідеї</div>
+                                <div class="carousel-card-desc">Знаходимо джерела натхнення та формуємо ідеї</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-card">
-                        <img src="course-1.jpg" alt="Lesson 2">
-                        <div class="carousel-card-info bg-purple-soft">
-                            <div class="carousel-card-name">Основи композиції</div>
-                            <div class="carousel-card-desc">Правила побудови сильного кадру</div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <img src="course-1.jpg" alt="Lesson 2">
+                            <div class="carousel-card-info bg-purple-soft">
+                                <div class="carousel-card-name">Основи композиції</div>
+                                <div class="carousel-card-desc">Правила побудови сильного кадру</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-card">
-                        <img src="course-1.jpg" alt="Lesson 3">
-                        <div class="carousel-card-info bg-purple-deep">
-                            <div class="carousel-card-name" style="color: white;">Світло</div>
-                            <div class="carousel-card-desc" style="color: rgba(255,255,255,0.8);">Як світло впливає на настрій зображення</div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <img src="course-1.jpg" alt="Lesson 3">
+                            <div class="carousel-card-info bg-purple-deep">
+                                <div class="carousel-card-name" style="color: white;">Світло</div>
+                                <div class="carousel-card-desc" style="color: rgba(255,255,255,0.8);">Як світло впливає на настрій зображення</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-card">
-                        <img src="course-1.jpg" alt="Lesson 4">
-                        <div class="carousel-card-info bg-pink-light">
-                            <div class="carousel-card-name">Кадрування</div>
-                            <div class="carousel-card-desc">Вибір ракурсу та рамки</div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <img src="course-1.jpg" alt="Lesson 4">
+                            <div class="carousel-card-info bg-pink-light">
+                                <div class="carousel-card-name">Кадрування</div>
+                                <div class="carousel-card-desc">Вибір ракурсу та рамки</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-card">
-                        <img src="course-1.jpg" alt="Lesson 5">
-                        <div class="carousel-card-info bg-purple-light">
-                            <div class="carousel-card-name">Промптінг</div>
-                            <div class="carousel-card-desc">Пишемо промпти які дають результат</div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <img src="course-1.jpg" alt="Lesson 5">
+                            <div class="carousel-card-info bg-purple-light">
+                                <div class="carousel-card-name">Промптінг</div>
+                                <div class="carousel-card-desc">Пишемо промпти які дають результат</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -343,41 +345,51 @@
             
             <!-- Block 2 -->
             <h3 class="block-title" style="padding-left: 24px;">Block 2 — Midjourney</h3>
-            <div class="carousel-wrapper">
-                <div class="carousel-track">
-                    <div class="carousel-card">
-                        <img src="course-1.jpg" alt="Lesson 6">
-                        <div class="carousel-card-info bg-pink-soft">
-                            <div class="carousel-card-name">Інтерфейс</div>
-                            <div class="carousel-card-desc">Повний огляд інструментів Midjourney</div>
+            <div class="swiper swiper-block2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <img src="course-1.jpg" alt="Lesson 6">
+                            <div class="carousel-card-info bg-pink-soft">
+                                <div class="carousel-card-name">Інтерфейс</div>
+                                <div class="carousel-card-desc">Повний огляд інструментів Midjourney</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-card">
-                        <img src="course-1.jpg" alt="Lesson 7">
-                        <div class="carousel-card-info bg-purple-soft">
-                            <div class="carousel-card-name">Налаштування</div>
-                            <div class="carousel-card-desc">Параметри та налаштування під свій стиль</div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <img src="course-1.jpg" alt="Lesson 7">
+                            <div class="carousel-card-info bg-purple-soft">
+                                <div class="carousel-card-name">Налаштування</div>
+                                <div class="carousel-card-desc">Параметри та налаштування під свій стиль</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-card">
-                        <img src="course-1.jpg" alt="Lesson 8">
-                        <div class="carousel-card-info bg-purple-deep">
-                            <div class="carousel-card-name" style="color: white;">Робота з зображеннями</div>
-                            <div class="carousel-card-desc" style="color: rgba(255,255,255,0.8);">Практика створення реалістичних кадрів</div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <img src="course-1.jpg" alt="Lesson 8">
+                            <div class="carousel-card-info bg-purple-deep">
+                                <div class="carousel-card-name" style="color: white;">Робота з зображеннями</div>
+                                <div class="carousel-card-desc" style="color: rgba(255,255,255,0.8);">Практика створення реалістичних кадрів</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-card">
-                        <img src="course-1.jpg" alt="Lesson 9">
-                        <div class="carousel-card-info bg-pink-light">
-                            <div class="carousel-card-name">Робота з анімацією</div>
-                            <div class="carousel-card-desc">Оживляємо зображення у відео</div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <img src="course-1.jpg" alt="Lesson 9">
+                            <div class="carousel-card-info bg-pink-light">
+                                <div class="carousel-card-name">Робота з анімацією</div>
+                                <div class="carousel-card-desc">Оживляємо зображення у відео</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-card">
-                        <img src="course-1.jpg" alt="Lesson 10">
-                        <div class="carousel-card-info bg-purple-light">
-                            <div class="carousel-card-name">Стилі</div>
-                            <div class="carousel-card-desc">Вивчаємо та застосовуємо різні стилі</div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <img src="course-1.jpg" alt="Lesson 10">
+                            <div class="carousel-card-info bg-purple-light">
+                                <div class="carousel-card-name">Стилі</div>
+                                <div class="carousel-card-desc">Вивчаємо та застосовуємо різні стилі</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -478,66 +490,16 @@
             }
         });
 
-        // Infinite Carousel logic
-        function initInfiniteCarousel(wrapper) {
-            const track = wrapper.querySelector('.carousel-track');
-            const cards = Array.from(track.querySelectorAll('.carousel-card'));
-            const total = cards.length;
+        const swiperConfig = {
+            loop: true,
+            slidesPerView: 1.2,
+            centeredSlides: true,
+            spaceBetween: 16,
+            grabCursor: true,
+        };
 
-            // Clone first and last for infinite loop illusion
-            const firstClone = cards[0].cloneNode(true);
-            const lastClone = cards[total - 1].cloneNode(true);
-            track.appendChild(firstClone);
-            track.insertBefore(lastClone, cards[0]);
-
-            // Add left margin to first real card (index 1 after prepend) for peek effect
-            track.querySelectorAll('.carousel-card')[1].style.marginLeft = '40px';
-
-            let current = 1;
-
-            function goTo(index, animate = true) {
-                track.style.transition = animate ? 'transform 0.4s ease' : 'none';
-                track.style.transform = `translateX(calc(-${index} * (100% + 12px)))`;
-                current = index;
-            }
-
-            goTo(1, false);
-
-            track.addEventListener('transitionend', () => {
-                if (current === 0) goTo(total, false);
-                if (current === total + 1) goTo(1, false);
-            });
-
-            let startX = 0;
-            wrapper.addEventListener('touchstart', e => {
-                startX = e.touches[0].clientX;
-            }, { passive: true });
-            wrapper.addEventListener('touchend', e => {
-                const diff = startX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 50) {
-                    if (diff > 0) goTo(current + 1);
-                    else goTo(current - 1);
-                }
-            }, { passive: true });
-
-            // Mouse drag support for desktop testing
-            let isDragging = false;
-            wrapper.addEventListener('mousedown', e => {
-                isDragging = true;
-                startX = e.clientX;
-            });
-            window.addEventListener('mouseup', e => {
-                if (!isDragging) return;
-                isDragging = false;
-                const diff = startX - e.clientX;
-                if (Math.abs(diff) > 50) {
-                    if (diff > 0) goTo(current + 1);
-                    else goTo(current - 1);
-                }
-            });
-        }
-
-        document.querySelectorAll('.carousel-wrapper').forEach(initInfiniteCarousel);
+        new Swiper('.swiper-block1', swiperConfig);
+        new Swiper('.swiper-block2', swiperConfig);
     </script>
 </body>
 </html>
