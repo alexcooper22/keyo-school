@@ -121,31 +121,6 @@
             border: 1px solid transparent;
         }
 
-        .btn-primary {
-            background-color: #fce238;
-            color: #1A1A1A;
-            margin-top: 8px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding: 16px 64px;
-            border-radius: 50px;
-            width: fit-content;
-        }
-
-        .hero-price {
-            display: block;
-            font-size: 56px;
-            font-weight: 800;
-            color: #1A1A1A;
-            margin-top: 32px;
-            letter-spacing: -2px;
-        }
-
-        .hero-price span {
-            color: #fce238;
-        }
-
         .section-label {
             text-align: center;
             font-size: 14px;
@@ -306,8 +281,13 @@
             <div class="hero-content" style="padding-bottom: 80px;">
                 <h1>Основи Midjourney та художнє мислення</h1>
                 <p>Курс про ідеї, стиль і Midjourney. Вчимося будувати кадр, писати промпти і створювати контент для Instagram і TikTok.</p>
-                <div class="hero-price"><span>$</span>119</div>
-                <a href="#" class="btn btn-primary">КУПИТИ</a>
+                <div style="display:flex; flex-direction:column; align-items:center; gap:8px; margin-bottom:16px; margin-top: 32px;">
+                  <div style="line-height:1; letter-spacing:-2px;">
+                    <span style="font-size:28px; font-weight:600; color:#fce238; font-family:'Montserrat',sans-serif;">$</span>
+                    <span style="font-size:56px; font-weight:800; color:#1A1A1A; font-family:'Montserrat',sans-serif;">119</span>
+                  </div>
+                  <button style="background:#fce238; color:#1A1A1A; font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; letter-spacing:0.1em; padding:16px 64px; border-radius:50px; border:none; cursor:pointer;">КУПИТИ</button>
+                </div>
             </div>
         </section>
 
