@@ -6,7 +6,7 @@
     <title>Ellen Keyo School - AI-освіта</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #eeede9;
@@ -101,26 +101,14 @@
             margin: 0 auto;
         }
 
-        @keyframes glitch {
-          0% { text-shadow: none; transform: translate(0); }
-          20% { text-shadow: -2px 0 #ffaee0, 2px 0 #8820b0; transform: translate(-1px, 0); }
-          40% { text-shadow: 2px 0 #ffaee0, -2px 0 #120330; transform: translate(1px, 0); }
-          60% { text-shadow: -1px 0 #fce238, 1px 0 #8820b0; transform: translate(0); }
-          80% { text-shadow: 1px 0 #ffaee0, -1px 0 #120330; transform: translate(1px, 1px); }
-          100% { text-shadow: none; transform: translate(0); }
-        }
-
         .hero .tag {
+            font-family: 'Syne', sans-serif;
             color: #8820b0;
             margin-bottom: 24px;
             display: inline-block;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
-            letter-spacing: 0.15em;
-        }
-
-        .hero-tag {
-          animation: glitch 3s infinite;
+            letter-spacing: 0.12em;
         }
 
         .hero h1 {
@@ -363,7 +351,7 @@
 
     <main>
         <section class="hero">
-            <span class="tag hero-tag">ELLEN KEYO SCHOOL</span>
+            <span class="tag">ELLEN KEYO SCHOOL</span>
             <h1>Освіта для тих, хто створює майбутнє</h1>
             <p>Авторські курси від художниці, дизайнерки та AI-креатора</p>
             <a href="#courses" class="btn btn-primary">Обрати курс &darr;</a>
