@@ -122,6 +122,7 @@
         .btn-primary {
             background-color: var(--accent-color);
             color: white;
+            margin-top: 24px;
         }
 
         .section-label {
@@ -140,32 +141,54 @@
             margin: 0 auto;
         }
 
-        .carousel-container {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            gap: 12px;
-            padding: 0 40px;
-            scroll-padding-left: 40px;
-            scrollbar-width: none;
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 48px;
         }
-        .carousel-container::-webkit-scrollbar {
-            display: none;
+
+        .carousel-track {
+            display: flex;
+            gap: 12px;
+            will-change: transform;
         }
 
         .carousel-card {
-            width: calc(100vw - 120px);
-            max-width: 400px;
+            min-width: calc(100% - 80px);
             flex-shrink: 0;
             border-radius: 20px;
             overflow: hidden;
             background: #ffffff;
             border: 1px solid #D5D0C8;
-            scroll-snap-align: center;
             display: flex;
             flex-direction: column;
             min-height: 420px;
+        }
+
+        .carousel-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .carousel-card-info {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .carousel-card-name {
+            font-weight: 700;
+            font-size: 16px;
+            color: #1A1A1A;
+        }
+
+        .carousel-card-desc {
+            font-size: 13px;
+            color: rgba(0,0,0,0.6);
+            margin-top: 6px;
         }
 
         .bg-pink-soft { background-color: #ffaee0; }
@@ -269,103 +292,86 @@
             <div class="hero-content" style="padding-bottom: 80px;">
                 <h1>Основи Midjourney та художнє мислення</h1>
                 <p>Курс про ідеї, стиль і Midjourney. Вчимося будувати кадр, писати промпти і створювати контент для Instagram і TikTok.</p>
-            <section id="program" style="margin-bottom: 32px;">
+                <a href="#" class="btn btn-primary">4 900 грн — Придбати курс</a>
+            </div>
+        </section>
+
+        <section id="program" style="margin-bottom: 32px;">
             <h2 class="section-label" style="margin-top: 80px; padding-left: 24px;">Програма курсу</h2>
             
             <!-- Block 1 -->
             <h3 class="block-title" style="padding-left: 24px;">Block 1 — Художнє мислення</h3>
-            <div class="carousel-container">
-                <!-- Clone for left peek -->
-                <div class="carousel-card" aria-hidden="true">
-                    <img src="course-1.jpg" alt="">
-                    <div class="carousel-card-info bg-purple-light">
-                        <div class="carousel-card-name">Промптінг</div>
-                        <div class="carousel-card-desc">Пишемо промпти які дають результат</div>
+            <div class="carousel-wrapper">
+                <div class="carousel-track">
+                    <div class="carousel-card">
+                        <img src="course-1.jpg" alt="Lesson 1">
+                        <div class="carousel-card-info bg-pink-soft">
+                            <div class="carousel-card-name">Пошук ідеї</div>
+                            <div class="carousel-card-desc">Знаходимо джерела натхнення та формуємо ідеї</div>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-card">
-                    <img src="course-1.jpg" alt="Lesson 1">
-                    <div class="carousel-card-info bg-pink-soft">
-                        <div class="carousel-card-name">Пошук ідеї</div>
-                        <div class="carousel-card-desc">Знаходимо джерела натхнення та формуємо ідеї</div>
+                    <div class="carousel-card">
+                        <img src="course-1.jpg" alt="Lesson 2">
+                        <div class="carousel-card-info bg-purple-soft">
+                            <div class="carousel-card-name">Основи композиції</div>
+                            <div class="carousel-card-desc">Правила побудови сильного кадру</div>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-card">
-                    <img src="course-1.jpg" alt="Lesson 2">
-                    <div class="carousel-card-info bg-purple-soft">
-                        <div class="carousel-card-name">Основи композиції</div>
-                        <div class="carousel-card-desc">Правила побудови сильного кадру</div>
+                    <div class="carousel-card">
+                        <img src="course-1.jpg" alt="Lesson 3">
+                        <div class="carousel-card-info bg-purple-deep">
+                            <div class="carousel-card-name" style="color: white;">Світло</div>
+                            <div class="carousel-card-desc" style="color: rgba(255,255,255,0.8);">Як світло впливає на настрій зображення</div>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-card">
-                    <img src="course-1.jpg" alt="Lesson 3">
-                    <div class="carousel-card-info bg-purple-deep">
-                        <div class="carousel-card-name" style="color: white;">Світло</div>
-                        <div class="carousel-card-desc" style="color: rgba(255,255,255,0.8);">Як світло впливає на настрій зображення</div>
+                    <div class="carousel-card">
+                        <img src="course-1.jpg" alt="Lesson 4">
+                        <div class="carousel-card-info bg-pink-light">
+                            <div class="carousel-card-name">Кадрування</div>
+                            <div class="carousel-card-desc">Вибір ракурсу та рамки</div>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-card">
-                    <img src="course-1.jpg" alt="Lesson 4">
-                    <div class="carousel-card-info bg-pink-light">
-                        <div class="carousel-card-name">Кадрування</div>
-                        <div class="carousel-card-desc">Вибір ракурсу та рамки</div>
-                    </div>
-                </div>
-                <div class="carousel-card">
-                    <img src="course-1.jpg" alt="Lesson 5">
-                    <div class="carousel-card-info bg-purple-light">
-                        <div class="carousel-card-name">Промптінг</div>
-                        <div class="carousel-card-desc">Пишемо промпти які дають результат</div>
+                    <div class="carousel-card">
+                        <img src="course-1.jpg" alt="Lesson 5">
+                        <div class="carousel-card-info bg-purple-light">
+                            <div class="carousel-card-name">Промптінг</div>
+                            <div class="carousel-card-desc">Пишемо промпти які дають результат</div>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <!-- Block 2 -->
             <h3 class="block-title" style="padding-left: 24px;">Block 2 — Midjourney</h3>
-            <div class="carousel-container">
-                <!-- Clone for left peek -->
-                <div class="carousel-card" aria-hidden="true">
-                    <img src="course-1.jpg" alt="">
-                    <div class="carousel-card-info bg-purple-light">
-                        <div class="carousel-card-name">Стилі</div>
-                        <div class="carousel-card-desc">Вивчаємо та застосовуємо різні стилі</div>
+            <div class="carousel-wrapper">
+                <div class="carousel-track">
+                    <div class="carousel-card">
+                        <img src="course-1.jpg" alt="Lesson 6">
+                        <div class="carousel-card-info bg-pink-soft">
+                            <div class="carousel-card-name">Інтерфейс</div>
+                            <div class="carousel-card-desc">Повний огляд інструментів Midjourney</div>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-card">
-                    <img src="course-1.jpg" alt="Lesson 6">
-                    <div class="carousel-card-info bg-pink-soft">
-                        <div class="carousel-card-name">Інтерфейс</div>
-                        <div class="carousel-card-desc">Повний огляд інструментів Midjourney</div>
+                    <div class="carousel-card">
+                        <img src="course-1.jpg" alt="Lesson 7">
+                        <div class="carousel-card-info bg-purple-soft">
+                            <div class="carousel-card-name">Налаштування</div>
+                            <div class="carousel-card-desc">Параметри та налаштування під свій стиль</div>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-card">
-                    <img src="course-1.jpg" alt="Lesson 7">
-                    <div class="carousel-card-info bg-purple-soft">
-                        <div class="carousel-card-name">Налаштування</div>
-                        <div class="carousel-card-desc">Параметри та налаштування під свій стиль</div>
+                    <div class="carousel-card">
+                        <img src="course-1.jpg" alt="Lesson 8">
+                        <div class="carousel-card-info bg-purple-deep">
+                            <div class="carousel-card-name" style="color: white;">Робота з зображеннями</div>
+                            <div class="carousel-card-desc" style="color: rgba(255,255,255,0.8);">Практика створення реалістичних кадрів</div>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-card">
-                    <img src="carousel-card-name" style="color: white;">Робота з зображеннями</div>
-                        <div class="lesson-card-desc" style="color: rgba(255,255,255,0.8);">Практика створення реалістичних кадрів</div>
-                    </div>
-                </div>
-                <div class="carousel-card">
-                    <img src="course-1.jpg" alt="Lesson 9">
-                    <div class="carousel-card-info bg-pink-light">
-                        <div class="carousel-card-name">Робота з анімацією</div>
-                        <div class="carousel-card-desc">Оживляємо зображення у відео</div>
-                    </div>
-                </div>
-                <div class="carousel-card">
-                    <img src="course-1.jpg" alt="Lesson 10">
-                    <div class="carousel-card-info bg-purple-light">
-                        <div class="carousel-card-name">Стилі</div>
-                        <div class="carousel-card-desc">Вивчаємо та застосовуємо різні стилі</div>
-                    </div>
-                </div>
-            </div>
-        </section>v>
+                    <div class="carousel-card">
+                        <img src="course-1.jpg" alt="Lesson 9">
+                        <div class="carousel-card-info bg-pink-light">
+                            <div class="carousel-card-name">Робота з анімацією</div>
+                            <div class="carousel-card-desc">Оживляємо зображення у відео</div>
+                        </div>
                     </div>
                     <div class="carousel-card">
                         <img src="course-1.jpg" alt="Lesson 10">
@@ -375,9 +381,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="nav-btn next">→</button>
             </div>
-        </section>
         </section>
 
         <section id="details" style="margin-bottom: 32px;">
@@ -424,7 +428,7 @@
                         </div>
                         <div class="qa-item">
                             <span class="qa-question">Коли я отримаю доступ?</span>
-                            <p class="qa-answer">Одразу після оплати — доступ надходит на твою пошту.</p>
+                            <p class="qa-answer">Одразу після оплати — доступ надходить на твою пошту.</p>
                         </div>
                         <div class="qa-item">
                             <span class="qa-question">Як довго я маю доступ до курсу?</span>
@@ -474,15 +478,66 @@
             }
         });
 
-        // Carousel initialization for left peek offset
-        window.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.carousel-container').forEach(c => {
-                const actualFirstCard = c.querySelectorAll('.carousel-card')[1];
-                if (actualFirstCard) {
-                    c.scrollLeft = actualFirstCard.offsetLeft - 40;
+        // Infinite Carousel logic
+        function initInfiniteCarousel(wrapper) {
+            const track = wrapper.querySelector('.carousel-track');
+            const cards = Array.from(track.querySelectorAll('.carousel-card'));
+            const total = cards.length;
+
+            // Clone first and last for infinite loop illusion
+            const firstClone = cards[0].cloneNode(true);
+            const lastClone = cards[total - 1].cloneNode(true);
+            track.appendChild(firstClone);
+            track.insertBefore(lastClone, cards[0]);
+
+            // Add left margin to first real card (index 1 after prepend) for peek effect
+            track.querySelectorAll('.carousel-card')[1].style.marginLeft = '40px';
+
+            let current = 1;
+
+            function goTo(index, animate = true) {
+                track.style.transition = animate ? 'transform 0.4s ease' : 'none';
+                track.style.transform = `translateX(calc(-${index} * (100% + 12px)))`;
+                current = index;
+            }
+
+            goTo(1, false);
+
+            track.addEventListener('transitionend', () => {
+                if (current === 0) goTo(total, false);
+                if (current === total + 1) goTo(1, false);
+            });
+
+            let startX = 0;
+            wrapper.addEventListener('touchstart', e => {
+                startX = e.touches[0].clientX;
+            }, { passive: true });
+            wrapper.addEventListener('touchend', e => {
+                const diff = startX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) goTo(current + 1);
+                    else goTo(current - 1);
+                }
+            }, { passive: true });
+
+            // Mouse drag support for desktop testing
+            let isDragging = false;
+            wrapper.addEventListener('mousedown', e => {
+                isDragging = true;
+                startX = e.clientX;
+            });
+            window.addEventListener('mouseup', e => {
+                if (!isDragging) return;
+                isDragging = false;
+                const diff = startX - e.clientX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) goTo(current + 1);
+                    else goTo(current - 1);
                 }
             });
-        });
+        }
+
+        document.querySelectorAll('.carousel-wrapper').forEach(initInfiniteCarousel);
     </script>
 </body>
 </html>
