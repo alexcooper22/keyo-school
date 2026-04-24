@@ -7,12 +7,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <style>
         :root {
-            --bg-color: #eeede9;
+            --bg-color: #ffffff;
             --text-color: #1A1A1A;
-            --accent-color: #a32318;
-            --card-bg: #f5f4f0;
+            --accent-color: #8820b0;
+            --card-bg: #ffffff;
             --border-color: #D5D0C8;
             --placeholder-bg: #D8D3CC;
             
@@ -50,34 +52,27 @@
             font-weight: 600;
         }
 
-        .tag {
-            font-size: 12px;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-        }
-
         /* Header */
         header {
             position: static;
             width: 100%;
-            background-color: rgba(238, 237, 233, 0.9);
+            background-color: transparent;
             backdrop-filter: blur(8px);
             padding: 16px 24px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-bottom: 1px solid #D5D0C8;
+            border-bottom: 1px solid transparent;
             transition: border-bottom 0.3s;
         }
 
         header.scrolled {
-            border-bottom: 1px solid #D5D0C8;
+            border-bottom: 1px solid rgba(213, 208, 200, 0.2);
         }
 
         .logo {
             font-size: 24px;
-            color: var(--accent-color);
+            color: #1A1A1A;
         }
 
         /* Hero */
@@ -85,21 +80,8 @@
             padding: 100px 24px 0;
             text-align: center;
             position: relative;
-            background-image: url('course-2.jpg');
-            background-size: cover;
-            background-position: center;
+            background-color: #ffffff;
             width: 100%;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(238, 237, 233, 0.75);
-            z-index: 1;
         }
 
         .hero-content {
@@ -139,32 +121,12 @@
             border: 1px solid transparent;
         }
 
-        .btn-primary {
-            background-color: var(--accent-color);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #8c1c13;
-        }
-
-        .divider {
-            height: 0.5px;
-            background-color: var(--border-color);
-            margin: 0 24px;
-            max-width: 1200px;
-        }
-        
-        .divider-centered {
-            margin: 0 auto;
-        }
-
         .section-label {
             text-align: center;
-            font-size: 11px;
+            font-size: 14px;
             text-transform: uppercase;
             font-weight: 700;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.15em;
             color: #6b6760;
             margin: 64px 0 24px;
         }
@@ -175,79 +137,69 @@
             margin: 0 auto;
         }
 
-        .grid-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-        }
-
-        @media (min-width: 768px) {
-            .grid-list {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .benefit-item {
-            background-color: #f5f4f0;
-            padding: 24px;
-            border-radius: 16px;
-            border: 1px solid #D5D0C8;
-        }
-
-        .program-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-        }
-
-        @media (min-width: 768px) {
-            .program-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .program-block {
+        .swiper {
+            width: 100%;
+            margin-top: 32px;
             margin-bottom: 48px;
         }
 
-        .program-block h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 24px;
-            color: var(--accent-color);
-        }
-
-        .lesson-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            width: 100%;
-        }
-
-        .lesson-pill {
-            background-color: #eeede9;
-            border: 1px solid #a32318;
+        .carousel-card {
             border-radius: 20px;
-            padding: 8px 18px;
-            text-align: left;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-color);
-            display: inline-block;
-            transition: all 0.2s;
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid #D5D0C8;
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
         }
 
-        .lesson-pill:hover {
-            background-color: var(--accent-color);
-            color: #ffffff;
+        .carousel-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .carousel-card-info {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .carousel-card-name {
+            font-weight: 700;
+            font-size: 16px;
+            color: #1A1A1A;
+        }
+
+        .carousel-card-desc {
+            font-size: 13px;
+            color: rgba(0,0,0,0.6);
+            margin-top: 6px;
+        }
+
+        .bg-pink-soft { background-color: #ffe8f7; }
+        .bg-purple-soft { background-color: #f0e8ff; }
+        .bg-purple-deep { background-color: #d4a0e0; }
+        .bg-pink-light { background-color: #fff0fb; }
+        .bg-purple-light { background-color: #e8ccfe; }
+
+        .block-title {
+            color: #1A1A1A;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 24px;
+            margin-top: 48px;
+            text-align: center;
         }
 
         .info-card {
-            background-color: #f5f4f0;
-            border: 1px solid #D5D0C8;
+            background-color: #f0e8ff;
+            border: none;
             border-radius: 16px;
             padding: 28px;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
             text-align: left;
         }
 
@@ -278,59 +230,14 @@
             top: 8px;
             width: 6px;
             height: 6px;
-            background-color: #a32318;
+            background-color: #8820b0;
             border-radius: 50%;
         }
 
-        .price-section {
-            display: none;
-        }
-
-        .price-tag {
-            display: none;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--bg-color);
-            border-top: 0.5px solid var(--border-color);
-            padding: 48px 24px 24px;
-            text-align: center;
-        }
-
-        .footer-logo {
-            font-family: var(--font-headings);
-            color: var(--accent-color);
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 24px;
-        }
-
-        .footer-contact {
-            margin-bottom: 24px;
-        }
-
-        .footer-links {
+        .qa-list {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 24px;
-            font-size: 14px;
-            margin-bottom: 32px;
-        }
-
-        .footer-legal {
-            line-height: 1.8;
-            color: #666;
-            font-size: 13px;
-        }
-        
-        .qa-item {
-            margin-bottom: 16px;
-        }
-
-        .qa-item:last-child {
-            margin-bottom: 0;
+            flex-direction: column;
+            gap: 16px;
         }
 
         .qa-question {
@@ -346,6 +253,21 @@
             color: #6b6760;
             font-size: 14px;
         }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-color);
+            border-top: 0.5px solid var(--border-color);
+            padding: 48px 24px 48px;
+            text-align: center;
+        }
+
+        .footer-legal {
+            line-height: 1.8;
+            color: #666;
+            font-size: 13px;
+            margin-top: 32px;
+        }
     </style>
 </head>
 <body>
@@ -356,51 +278,198 @@
 
     <main>
         <section class="hero">
-            <div class="hero-content" style="padding-bottom: 80px;">
+            <div class="hero-content" style="padding-bottom: 40px;">
                 <h1>Аватар та робота над комерційними проєктами</h1>
                 <p>Курс про створення AI-аватара та комерційну зйомку продуктів. Навчишся будувати свого персонажа з нуля — зовнішність, одяг, зачіска, локація та ракурс. В блоці комерційних проєктів я показую як саме працюю над реальними замовленнями — кераміка, свічки, ювелірні вироби та обробка результату.</p>
-                <a href="#" class="btn btn-primary">6 900 грн — Придбати курс</a>
+                <div style="display:flex; flex-direction:column; align-items:center; gap:8px; margin-bottom:16px; margin-top: 32px;">
+                  <div style="line-height:1; letter-spacing:-2px;">
+                    <span style="font-size:28px; font-weight:600; color:#fce238; font-family:'Montserrat',sans-serif;">$</span>
+                    <span style="font-size:56px; font-weight:800; color:#1A1A1A; font-family:'Montserrat',sans-serif;">169</span>
+                  </div>
+                  <button style="background:#fce238; color:#1A1A1A; font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700; letter-spacing:0.1em; padding:16px 64px; border-radius:50px; border:none; cursor:pointer;">КУПИТИ</button>
+                </div>
             </div>
         </section>
-        <hr style="border: none; border-top: 1px solid #D5D0C8; margin: 0 0 48px 0;">
 
         <section id="program" style="margin-bottom: 32px;">
-            <h2 class="section-label" style="margin-top: 80px;">Програма курсу</h2>
-            <div class="content-section">
-                <!-- Block 1 -->
-                <div class="program-block">
-                    <h3>Block 3 — AI Аватар</h3>
-                    <div class="lesson-list">
-                        <div class="lesson-pill">Створюємо Аватар</div>
-                        <div class="lesson-pill">Одягаємо Аватар</div>
-                        <div class="lesson-pill">Зачіска</div>
-                        <div class="lesson-pill">Ракурс</div>
-                        <div class="lesson-pill">Локація</div>
-                        <div class="lesson-pill">Higgsfield - Фішки</div>
-                        <div class="lesson-pill">Higgsfield - AI Influencer</div>
-                        <div class="lesson-pill">Higgsfield - Apps</div>
+            <h2 class="section-label">Програма курсу</h2>
+            
+            <!-- Block 3 -->
+            <h3 class="block-title">Block 3 — AI Аватар</h3>
+            <div class="swiper swiper-block1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <div style="position: relative;">
+                                <img src="course-2.jpg" alt="Lesson 1">
+                                <div style="position: absolute; inset: 0; background: rgba(255,255,255,0.1);"></div>
+                            </div>
+                            <div class="carousel-card-info bg-pink-soft">
+                                <div class="carousel-card-name">Створюємо Аватар</div>
+                                <div class="carousel-card-desc">Розробка зовнішності персонажа</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <div style="position: relative;">
+                                <img src="course-2.jpg" alt="Lesson 2">
+                                <div style="position: absolute; inset: 0; background: rgba(255,255,255,0.1);"></div>
+                            </div>
+                            <div class="carousel-card-info bg-purple-soft">
+                                <div class="carousel-card-name">Одягаємо Аватар</div>
+                                <div class="carousel-card-desc">Підбір стилю та гардеробу</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <div style="position: relative;">
+                                <img src="course-2.jpg" alt="Lesson 3">
+                                <div style="position: absolute; inset: 0; background: rgba(255,255,255,0.1);"></div>
+                            </div>
+                            <div class="carousel-card-info bg-purple-deep">
+                                <div class="carousel-card-name" style="color: white;">Зачіска</div>
+                                <div class="carousel-card-desc" style="color: rgba(255,255,255,0.8);">Деталізація волосся та аксесуарів</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <div style="position: relative;">
+                                <img src="course-2.jpg" alt="Lesson 4">
+                                <div style="position: absolute; inset: 0; background: rgba(255,255,255,0.1);"></div>
+                            </div>
+                            <div class="carousel-card-info bg-pink-light">
+                                <div class="carousel-card-name">Ракурс</div>
+                                <div class="carousel-card-desc">Робота з положенням камери</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <div style="position: relative;">
+                                <img src="course-2.jpg" alt="Lesson 5">
+                                <div style="position: absolute; inset: 0; background: rgba(255,255,255,0.1);"></div>
+                            </div>
+                            <div class="carousel-card-info bg-purple-light">
+                                <div class="carousel-card-name">Локація</div>
+                                <div class="carousel-card-desc">Створення оточення для персонажа</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <div style="position: relative;">
+                                <img src="course-2.jpg" alt="Lesson 6">
+                                <div style="position: absolute; inset: 0; background: rgba(255,255,255,0.1);"></div>
+                            </div>
+                            <div class="carousel-card-info bg-pink-soft">
+                                <div class="carousel-card-name">Higgsfield - Фішки</div>
+                                <div class="carousel-card-desc">Розширені можливості інструменту</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <div style="position: relative;">
+                                <img src="course-2.jpg" alt="Lesson 7">
+                                <div style="position: absolute; inset: 0; background: rgba(255,255,255,0.1);"></div>
+                            </div>
+                            <div class="carousel-card-info bg-purple-soft">
+                                <div class="carousel-card-name">Higgsfield - AI Influencer</div>
+                                <div class="carousel-card-desc">Створення впливового AI-персонажа</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <div style="position: relative;">
+                                <img src="course-2.jpg" alt="Lesson 8">
+                                <div style="position: absolute; inset: 0; background: rgba(255,255,255,0.1);"></div>
+                            </div>
+                            <div class="carousel-card-info bg-purple-deep">
+                                <div class="carousel-card-name" style="color: white;">Higgsfield - Apps</div>
+                                <div class="carousel-card-desc" style="color: rgba(255,255,255,0.8);">Інтеграція з мобільними додатками</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Block 2 -->
-                <div class="program-block">
-                    <h3>Block 4 — Робота з продуктами</h3>
-                    <div class="lesson-list">
-                        <div class="lesson-pill">Кераміка</div>
-                        <div class="lesson-pill">Мило і свічка</div>
-                        <div class="lesson-pill">Ювелірні вироби. Каблучка</div>
-                        <div class="lesson-pill">Обробка зображень. Luma</div>
-                        <div class="lesson-pill">Sensitive content</div>
+            </div>
+            
+            <!-- Block 4 -->
+            <h3 class="block-title">Block 4 — Робота з продуктами</h3>
+            <div class="swiper swiper-block2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <div style="position: relative;">
+                                <img src="course-2.jpg" alt="Lesson 9">
+                                <div style="position: absolute; inset: 0; background: rgba(255,255,255,0.1);"></div>
+                            </div>
+                            <div class="carousel-card-info bg-pink-soft">
+                                <div class="carousel-card-name">Кераміка</div>
+                                <div class="carousel-card-desc">Візуалізація керамічних виробів</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <div style="position: relative;">
+                                <img src="course-2.jpg" alt="Lesson 10">
+                                <div style="position: absolute; inset: 0; background: rgba(255,255,255,0.1);"></div>
+                            </div>
+                            <div class="carousel-card-info bg-purple-soft">
+                                <div class="carousel-card-name">Мило і свічка</div>
+                                <div class="carousel-card-desc">Естетика предметної зйомки</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <div style="position: relative;">
+                                <img src="course-2.jpg" alt="Lesson 11">
+                                <div style="position: absolute; inset: 0; background: rgba(255,255,255,0.1);"></div>
+                            </div>
+                            <div class="carousel-card-info bg-purple-deep">
+                                <div class="carousel-card-name" style="color: white;">Ювелірні вироби</div>
+                                <div class="carousel-card-desc" style="color: rgba(255,255,255,0.8);">Робота з металом та камінням</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <div style="position: relative;">
+                                <img src="course-2.jpg" alt="Lesson 12">
+                                <div style="position: absolute; inset: 0; background: rgba(255,255,255,0.1);"></div>
+                            </div>
+                            <div class="carousel-card-info bg-pink-light">
+                                <div class="carousel-card-name">Обробка зображень. Luma</div>
+                                <div class="carousel-card-desc">Покращення та анімація результатів</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="carousel-card">
+                            <div style="position: relative;">
+                                <img src="course-2.jpg" alt="Lesson 13">
+                                <div style="position: absolute; inset: 0; background: rgba(255,255,255,0.1);"></div>
+                            </div>
+                            <div class="carousel-card-info bg-purple-light">
+                                <div class="carousel-card-name">Sensitive content</div>
+                                <div class="carousel-card-desc">Особливості роботи з обмеженнями</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <hr style="border: none; border-top: 1px solid #D5D0C8; margin: 48px 0;">
 
+        <hr style="border: none; border-top: 1px solid rgba(0,0,0,0.1); margin: 40px 0;">
         <section id="details" style="margin-bottom: 32px;">
             <div class="content-section">
                 <!-- Card 1 -->
-                <div class="info-card">
+                <div class="info-card" style="margin-top: 24px;">
                     <h3>Що дасть тобі курс</h3>
                     <div class="info-list">
                         <div class="info-item">Навчишся чітко формулювати промпти</div>
@@ -433,7 +502,7 @@
 
                 <!-- Card 4 -->
                 <div class="info-card">
-                    <h3>Q&A</h3>
+                    <h3 style="color: #8820b0;">Q&A</h3>
                     <div class="qa-list">
                         <div class="qa-item">
                             <span class="qa-question">Як проходить навчання?</span>
@@ -460,10 +529,10 @@
         
         <div style="display:flex; justify-content:center; gap:24px; margin-bottom: 24px;">
           <a href="https://www.instagram.com/ellen.keyo/" target="_blank" aria-label="Instagram">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a32318" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="#a32318" stroke="none"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8820b0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="#8820b0" stroke="none"/></svg>
           </a>
           <a href="https://www.tiktok.com/@ellen.keyo" target="_blank" aria-label="TikTok">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#a32318"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.16 8.16 0 0 0 4.77 1.52V7.12a4.85 4.85 0 0 1-1-.43z"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#8820b0"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.05a8.16 8.16 0 0 0 4.77 1.52V7.12a4.85 4.85 0 0 1-1-.43z"/></svg>
           </a>
         </div>
 
@@ -472,9 +541,7 @@
             <a href="#">Публічна оферта</a>
         </div>
         
-        <div class="footer-divider"></div>
-        
-        <div class="footer-legal" style="line-height: 1.8; color: #666; font-size: 13px;">
+        <div class="footer-legal">
             &copy; 2026 ФОП БОНДАР ОЛЕНА СЕРГІЇВНА<br>
             РНОКПП / ЄДРПОУ: 3403609226<br>
             адреса: Україна, м. Київ, вул. І.Франка 42, 02000<br>
@@ -492,6 +559,17 @@
                 header.classList.remove('scrolled');
             }
         });
+
+        const swiperConfig = {
+            loop: true,
+            slidesPerView: 1.6,
+            centeredSlides: true,
+            spaceBetween: 24,
+            grabCursor: true,
+        };
+
+        new Swiper('.swiper-block1', swiperConfig);
+        new Swiper('.swiper-block2', swiperConfig);
     </script>
 </body>
 </html>
