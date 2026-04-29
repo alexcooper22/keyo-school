@@ -801,7 +801,11 @@
         new Swiper('.swiper-block3', swiperConfig);
         new Swiper('.swiper-block4', swiperConfig);
         new Swiper('.swiper-block5', swiperConfig);
-        new Swiper('.swiper-block6', swiperConfig);
+        new Swiper('.swiper-block6', {
+            ...swiperConfig,
+            slidesPerView: 1.4,
+            centeredSlides: true
+        });
     </script>
 </body>
 </html>
