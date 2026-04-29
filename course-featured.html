@@ -643,7 +643,7 @@
 
             <!-- Block 6 -->
             <h3 class="block-title">Weavy. Робота з нодами</h3>
-            <div class="swiper swiper-block6">
+            <div class="swiper swiper-weavy">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="carousel-card">
@@ -813,10 +813,12 @@
         new Swiper('.swiper-block3', swiperConfig);
         new Swiper('.swiper-block4', swiperConfig);
         new Swiper('.swiper-block5', swiperConfig);
-        new Swiper('.swiper-block6', {
-            ...swiperConfig,
+        new Swiper('.swiper-weavy', {
+            loop: true,
             slidesPerView: 1.4,
-            centeredSlides: true
+            centeredSlides: true,
+            spaceBetween: 16,
+            grabCursor: true,
         });
     </script>
 </body>
